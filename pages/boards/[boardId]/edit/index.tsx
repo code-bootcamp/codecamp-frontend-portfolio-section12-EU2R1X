@@ -23,9 +23,7 @@ export default function BoardsEditPage(): JSX.Element {
 
   const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
     FETCH_BOARD,
-    {
-      variables: { boardId: router.query.boardId },
-    }
+    { variables: { boardId: router.query.boardId } }
   );
 
   return <BoardWrite isEdit={true} data={data} />;
